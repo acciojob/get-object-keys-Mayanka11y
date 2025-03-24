@@ -1,30 +1,20 @@
 //your JS code here. If required.
-// Create the student object
+// Define the student object
+// Define the student object
 const student = {
   name: "John",
 };
 
-// Function to get all keys from the object
+// Function to get all keys from an object
 function getKeys(obj) {
   return Object.keys(obj);
 }
 
-// Function to display the output on the webpage
-function displayOutput(keys) {
-  const outputDiv = document.getElementById("output");
-  outputDiv.innerHTML = `<p>Keys: ${keys.join(", ")}</p>`;
-}
-
-// Test the function and display the output
-const keys = getKeys(student);
-displayOutput(keys);
-
-// Additional test cases
-const studentWithMoreProperties = {
-  name: "Jane",
-  age: 22,
-  city: "New York"
+// Add getKeys as a prototype method (optional, but not necessary)
+Object.prototype.getKeys = function () {
+  return Object.keys(this);
 };
 
-const moreKeys = getKeys(studentWithMoreProperties);
-displayOutput(moreKeys);
+// Do not change the code below
+window.student = student;
+window.getKeys = getKeys;
